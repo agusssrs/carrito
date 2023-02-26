@@ -723,6 +723,10 @@
     #menu-toggle:checked + .navbar-list{
         display: flex;
     }
+
+    /* .open-menu{
+        display: flex;
+    } */
 }
 
     @media (max-width:545px){
