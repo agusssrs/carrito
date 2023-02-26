@@ -27,19 +27,35 @@
 
 const cartMenu = document.querySelector('cart')
 
-
-products.forEach((producto) => {
+console.log(products)
+ products.forEach((producto) => {
     const div = document.createElement('div')
-    div.classList.add('perfumes')
-    div.innerHTML = `
-    <div class="perfumes">
-        <div>
-            <img src="${producto.productImg}" alt="">
-            <h2>${producto.name} ${producto.ml} </h2>
-            <p>${producto.price}</p>
-            <a href="#" class="BuyBtn">Comprar</a>
-        </div>
-    </div>`
-});
+     div.classList.add('producto')
+     div.innerHTML = `
+     <div class="perfumes">
+         <div>
+             <img src="${producto.productImg}" alt="">
+             <h2>${producto.name} ${producto.ml} </h2>
+             <p>${producto.price}</p>
+             <a href="#" class="BuyBtn" id="agregar ${producto.id}">Comprar</a>
+         </div>
+     </div>`
+ });
 
-cartMenu.appendChild(div)
+ const btn = document.getElementById (`agregar${producto.id}`)
+
+    btn.addEventListener('click', () =>{
+    addItemCart(producto.id)
+ })
+
+ cartMenu.appendChild(div)
+
+ let cart = [
+
+ ]
+
+ const addItemCart = (prodId) => {
+     const item = products.find((prod) => prod.id === prodId)
+     cart.push(item)
+     console.log(cart)
+ }
