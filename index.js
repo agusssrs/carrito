@@ -24,7 +24,7 @@
 // }
 // init();
 
-
+const perfumesCards = document.querySelector('.perfumes')
 const cartMenu = document.querySelector('cart')
 
 console.log(products)
@@ -32,23 +32,24 @@ console.log(products)
     const div = document.createElement('div')
      div.classList.add('producto')
      div.innerHTML = `
-     <div class="perfumes">
-         <div>
+     <div class="azzaro">
              <img src="${producto.productImg}" alt="">
              <h2>${producto.name} ${producto.ml} </h2>
              <p>${producto.price}</p>
-             <a href="#" class="BuyBtn" id="agregar ${producto.id}">Comprar</a>
-         </div>
+             <a href="#" class="BuyBtn" id="${producto.id}">Comprar</a>
      </div>`
+     perfumesCards.appendChild(div)
+     const btn = document.getElementById (`${producto.id}`)
+     btn.addEventListener('click', () =>addItemCart(producto.id))
  });
 
- const btn = document.getElementById (`agregar${producto.id}`)
+//  const btn = document.getElementById (`agregar${producto.id}`)
 
-    btn.addEventListener('click', () =>{
-    addItemCart(producto.id)
- })
+//     btn.addEventListener('click', () =>{
+//     addItemCart(producto.id)
+//  })
 
- cartMenu.appendChild(div)
+//  cartMenu.appendChild(div)
 
  let cart = [
 
@@ -57,5 +58,5 @@ console.log(products)
  const addItemCart = (prodId) => {
      const item = products.find((prod) => prod.id === prodId)
      cart.push(item)
-     console.log(cart)
+     console.log(cart, 'Cart')
  }
