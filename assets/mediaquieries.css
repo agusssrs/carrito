@@ -1484,6 +1484,43 @@
             font-size: 35px;
         }
 
+         .cart{
+            position: absolute;
+            top: 65px;
+            right: 0;
+            padding: 50px 0px;
+            background: -webkit-linear-gradient(to bottom, #3A6073, #16222A);
+            background: linear-gradient(to bottom, #3A6073, #16222A);
+            border: 3px solid aqua;
+            border-top: 0px;
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            z-index: 2;
+            overflow-y: scroll;
+            display: none;
+            /* max-height: 700px; */
+            width: 300px;
+        } 
+
+        .cart-item{
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            border: 3px solid aquamarine;
+            border-radius: 0.5rem;
+            padding: 5px;
+            width: 260px;
+        }
+
+        .cart-item img{
+            width: 55px;
+        }
+
         .perfumes{
             display: grid;
             grid-template-columns: 243px;
